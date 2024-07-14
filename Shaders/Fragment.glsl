@@ -51,6 +51,7 @@ void main()
 
     vec3 viewDir = normalize(viewPos - FragPos);
 
+
     FragColor = vec4(CalcDirLight(pointLight, norm, FragPos, viewDir), 1.0);
 }
 
@@ -85,7 +86,7 @@ vec3 CalcDirLight(PointLight light, vec3 normal, vec3 fragPos, vec3 viewDir)
 
     // reflection
     vec3 R = reflect(-viewDir, normal);
-    float fresnel = pow((1 - dot(normalize(viewDir), vec3(0.0, 1.0, 0.0))), 5);
+    float fresnel = pow(1 - max(dot(normalize(viewDir), vec3(0.0, 1.0, 0.0)), 0), 5);
     vec3 reflectCol = texture(skybox, R).rgb * fresnel;
 
     vec3 ambient = light.ambient * vec3(0.6, 0.6, 0.6);

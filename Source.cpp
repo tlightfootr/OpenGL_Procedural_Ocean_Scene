@@ -169,6 +169,7 @@ int main() {
 
 	// enable depth testing
 	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LEQUAL);
 
 	Model water = Model("Models/water2/water.obj");
 	Model light = Model("Models/cube/cube.obj");
@@ -187,8 +188,8 @@ int main() {
 
 		//render
 		// clear screen 
-		glEnable(GL_DEPTH_TEST); 
-		glDepthFunc(GL_LEQUAL);
+
+		
 		glClearColor(0.2f, 0.4f, 0.6f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		
