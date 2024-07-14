@@ -172,7 +172,6 @@ int main() {
 	glDepthFunc(GL_LEQUAL);
 
 	Model water = Model("Models/water2/water.obj");
-	Model light = Model("Models/cube/cube.obj");
 
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
